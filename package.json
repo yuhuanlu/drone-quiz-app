@@ -2,14 +2,14 @@
   "name": "drone-quiz-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://spineblow.github.io/drone-quiz-app",
+  "homepage": "https://yuhuanlu.github.io/drone-quiz-app",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "next dev",
+    "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
