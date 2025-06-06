@@ -101,7 +101,7 @@ export default function Home() {
   useEffect(() => {
     const fetchCounts = async () => {
       setLoading(true);
-      const counts = await getQuestionCountByModeAndChapter(mode);
+      const counts = await getQuestionCountByModeAndChapter(mode || 'normal');
       setQuestionCounts(counts);
       setLoading(false);
     };
@@ -220,21 +220,6 @@ export default function Home() {
   const removeHistory = () => {
     localStorage.removeItem("quizHistory");
     setQuizHistory([]);
-  };
-
-  const removeGeneralHistory = (mode: string | null , chapter: number | null) => {
-    const answeredKey = `answeredQuestions-${mode}-${chapter}`;
-    console.log(answeredKey)
-    localStorage.removeItem(answeredKey);
-    setCurrentIndex(0);
-    setSelectedOption("");
-    setScore(0);
-    setResults([]);
-    setIsAnswered(false);
-    setElapsedTime(0);
-    setStartTime(null);
-    console.log(isAnswered, results, quizHistory, currentIndex)
-    // setResults([]);
   };
 
   if (historyVisible) {

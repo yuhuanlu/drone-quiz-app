@@ -12,22 +12,6 @@ const chapterMap: Record<Chapter, string> = {
   4: "第四章 緊急處置與飛行決策",
 };
 
-// 假設你有一個題庫是依章節與模式分類的
-const questionBank: Record<Mode, Record<Chapter, any[]>> = {
-  normal: {
-    1: new Array(10).fill(null),  // 假設每章有 10 題
-    2: new Array(8).fill(null),
-    3: new Array(12).fill(null),
-    4: new Array(9).fill(null),
-  },
-  professional: {
-    1: new Array(15).fill(null),
-    2: new Array(10).fill(null),
-    3: new Array(14).fill(null),
-    4: new Array(13).fill(null),
-  },
-};
-
 interface ChapterListProps {
   selectedMode: Mode;
   questionCounts: Record<1 | 2 | 3 | 4, number>;
